@@ -469,9 +469,9 @@ class Session
                     }
                 }
 
-                if(in_array($rc, [20302])) {
-                    print_r($xml);
-                    exit();
+                // Return validation errors for parsing.
+                if($rc === '20301' && $capability === 'Update') {
+                    return $response;
                 }
 
                 // 20201 - No records found - not exception worthy in my mind
