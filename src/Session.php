@@ -299,6 +299,18 @@ class Session
         return $parser->parse($this, $response, $parameters);
     }
 
+    /**
+     * @param $resource_id
+     * @param $class_id
+     * @param $action
+     * @param string $data
+     * @param string|null $warning_response
+     * @param int $validation_mode
+     * @param $delimiter
+     * @return mixed
+     * @throws CapabilityUnavailable
+     * @throws RETSException
+     */
     public function Update($resource_id, $class_id, $action, string $data, string $warning_response = null, int $validation_mode = 0, $delimiter = '09')
     {
         $parameters = [
@@ -323,6 +335,17 @@ class Session
         return $parser->parse($this, $response, $parameters);
     }
 
+    /**
+     * @param $resource
+     * @param $type
+     * @param $content_type
+     * @param $action
+     * @param mixed $body
+     * @param array $attributes
+     * @return mixed
+     * @throws CapabilityUnavailable
+     * @throws RETSException
+     */
     public function PostObject($resource, $type, $content_type, $action, mixed $body, array $attributes = [])
     {
         $headers = array_merge([
