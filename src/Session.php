@@ -518,7 +518,7 @@ class Session
                     }
                 }
 
-                // Return validation errors for parsing Update requests.
+                // Return validation errors for parsing Update and POSTObject requests.
                 if (in_array(strtolower($capability), ['update', 'postobject'])) {
                     return $response;
                 }
